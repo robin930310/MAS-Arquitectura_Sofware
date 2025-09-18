@@ -6,8 +6,6 @@ Diseñar arquitecturas de software utilizando **estilos y patrones arquitectóni
 - 🧩 Mantenibles  
 - 📋 Alineadas con los requisitos técnicos y del negocio
 
----
-
 ## 📊 Indicadores de desempeño
 
 Evaluar la **calidad de las arquitecturas de software** mediante la aplicación de técnicas de evaluación y aseguramiento de atributos de calidad, como:
@@ -18,8 +16,6 @@ Evaluar la **calidad de las arquitecturas de software** mediante la aplicación 
 
 Usando herramientas y metodologías avanzadas 🧪.
 
----
-
 ## 📝 Descripción
 
 En los siguientes tres ejercicios deberás:
@@ -28,8 +24,6 @@ En los siguientes tres ejercicios deberás:
 - 🧠 Seleccionar el patrón que consideras que es
 - 🧬 Diseñar el diagrama de clases de la solución
 - 💻 Desarrollar el código de los tres ejercicios
-
----
 
 ## 🧪 Ejercicios
 

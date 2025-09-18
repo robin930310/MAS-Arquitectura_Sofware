@@ -10,8 +10,6 @@ Las notificaciones pueden ser de distintos tipos:
 
 Cada tipo puede mostrarse de distintas formas según la plataforma.
 
----
-
 ## ⚠️ Problema
 
 Si usas herencia tradicional, tendrías que crear clases como:
@@ -24,8 +22,6 @@ Si usas herencia tradicional, tendrías que crear clases como:
 
 Esto lleva rápidamente a una **explosión combinatoria de subclases** difíciles de mantener. 💥
 
----
-
 ## 💡 Beneficios esperados de la solución
 
 - 🧠 **Separación de responsabilidades:** Separar la lógica de la notificación del medio por el que se presenta.
@@ -34,7 +30,6 @@ Esto lleva rápidamente a una **explosión combinatoria de subclases** difícile
 - 🔁 **Flexibilidad en tiempo de ejecución:** Poder cambiar la plataforma dinámicamente si es necesario.
 
 ___
-___
 
 # 🧩 Solución
 
@@ -42,17 +37,14 @@ ___
 
 XXXXX
 
-___
 ## 🧠 Patrón de diseño
 
 XXXXX
 
-___
 ## 🖼️ Diagrama de clases
 
 ![Diagrama de clases](../Diagramas/Clases__Ejercicio_2.drawio.svg)
 
-___
 ## 💻 Código
 
 ```csharp

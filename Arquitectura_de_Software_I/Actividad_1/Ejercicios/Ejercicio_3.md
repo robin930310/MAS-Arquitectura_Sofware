@@ -5,14 +5,11 @@ Los usuarios pueden enviarse mensajes entre sí dentro de una sala de chat. 💻
 
 Sin embargo, gestionar las interacciones directas entre cada usuario haría que cada uno deba conocer y comunicarse con todos los demás, lo que resulta en una **alta dependencia entre objetos**. 🧩🕸️
 
----
-
 ## ⚠️ Problema
 
 Sin un **mediador**, cada usuario tendría que mantener referencias directas a todos los demás, lo que genera un sistema **difícil de escalar y mantener**. ⚡  
 Si agregas o eliminas usuarios, debes actualizar muchas relaciones. 🔁
 
----
 
 ## 💡 Beneficios esperados de la solución
 
@@ -21,7 +18,6 @@ Si agregas o eliminas usuarios, debes actualizar muchas relaciones. 🔁
 3. 📉 **Reduce la complejidad:** Evitar una red enmarañada de interacciones punto a punto.
 
 ___
-___
 
 # 🧩 Solución
 
@@ -29,17 +25,14 @@ ___
 
 XXXXX
 
-___
 ## 🧠 Patrón de diseño
 
 XXXXX
 
-___
 ## 🖼️ Diagrama de clases
 
 ![Diagrama de clases](../Diagramas/Clases__Ejercicio_3.drawio.svg)
 
-___
 ## 💻 Código
 
 ```csharp

@@ -13,13 +13,9 @@ Un objeto **Automóvil** puede tener muchas configuraciones opcionales:
 - 🗺️ Navegación GPS
 - ➕ Etc...
 
-___ 
-
 ## ⚠️ Problema
 
 Crear un objeto Automóvil con múltiples configuraciones puede llevar a constructores con muchos parámetros (el infame _`"constructor telescópico"`_) o a múltiples constructores sobrecargados, lo que dificulta el mantenimiento y legibilidad del código. 🧩
-
-___
 
 ## 💡 Beneficios esperados de la solución
 
@@ -29,7 +25,6 @@ ___
 - 🧠 **Separación de construcción y representación:** Separar la lógica de construcción del objeto en sí, facilitando modificaciones futuras.
 
 ___
-___
 
 # 🧩 Solución
 
@@ -37,17 +32,14 @@ ___
 
 XXXXX
 
-___
 ## 🧠 Patrón de diseño
 
 XXXXX
 
-___
 ## 🖼️ Diagrama de clases
 
 ![Diagrama de clases](../Diagramas/Clases__Ejercicio_1.drawio.svg)
 
-___
 ## 💻 Código
 
 ```csharp
