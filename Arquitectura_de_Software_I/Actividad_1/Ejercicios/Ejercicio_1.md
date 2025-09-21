@@ -30,21 +30,58 @@ ___
 
 ## 🏷️ Tipo de patrón
 
-XXXXX
+**Creacional**  
+Nos dice **cómo crear un objeto complicado** sin enredarnos con un montón de constructores.
+Un Automovil tiene muchísimas opciones (motor, color, llantas, extras…), y este patrón permite armarlo paso a paso, con valores por defecto y la posibilidad de clonarlo y modificar partes sin complicar el código.
 
 ## 🧠 Patrón de diseño
 
-XXXXX
+**Builder**  
+Sirve para armar objetos paso a paso, eligiendo solo lo que quieras sin tener que rellenar todo desde el principio. Además, una vez creado, el objeto es inmutable, lo que ayuda a evitar errores.
+
+**Factory**  
+Da recetas listas de autos según el tipo: lujo, básico, deportivo…
+Es útil porque no tenemos que preocuparnos por llenar todos los campos obligatorios, la Factory ya los maneja por nosotros.
+
+**Prototype**
+Permite clonar un auto que ya existe y cambiar solo lo que necesites.
+Por ejemplo, tomas un Mercedes de lujo y lo conviertes en edición especial cambiando color, modelo o cualquier otro detalle sin afectar el auto original.
+
+**Justificación:**  
+Builder deja armar autos completos paso a paso y flexibles.
+Factory ahorra tiempo generando autos listos sin preocuparse de los campos obligatorios.
+Prototype ofrece la ventaja de clonar un auto existente y personalizarlo al instante, sin tener que empezar desde cero.
 
 ## 🖼️ Diagrama de clases
 
-![Diagrama de clases](../Diagramas/Clases__Ejercicio_1.drawio.svg)
+![Diagrama de clases](../Diagramas/Clases__Ejercicio_1.svg)
 
 ## 💻 Código
 
 ```csharp
 public class Program
 {
-    
+    static void Main()
+    {
+        factory = new AutoDeLujoFactory();
+            Automovil autoDeLujo = factory.CrearAutomovil();
+            Console.WriteLine($"\n## Automóvil de Lujo:\n{autoDeLujo}");
+
+            factory = new AutoBasicoFactory();
+            Automovil autoBasico = factory.CrearAutomovil();
+            Console.WriteLine($"\n## Automóvil Básico:\n{autoBasico}");
+
+            factory = new AutoDeportivoFactory();
+            Automovil autoDeportivo = factory.CrearAutomovil();
+            Console.WriteLine($"\n## Automóvil Deportivo:\n{autoDeportivo}");
+
+            var autoEspecial = new AutomovilBuilder(new AutoDeLujoFactory().CrearAutomovil())
+                        .SetColor("Rojo Metalizado")
+                        .SetModelo("Edición Especial")
+                        .SetAño(2026)
+                        .Build();
+
+            Console.WriteLine($"\n## Automóvil Especial:\n{autoEspecial}");
+    }
 }
 ```
