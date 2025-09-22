@@ -24,64 +24,42 @@ Crear un objeto Automóvil con múltiples configuraciones puede llevar a constru
 - 🧩 **Flexibilidad:** Poder omitir atributos opcionales sin necesidad de crear subclases o múltiples constructores.
 - 🧠 **Separación de construcción y representación:** Separar la lógica de construcción del objeto en sí, facilitando modificaciones futuras.
 
-___
+---
 
 # 🧩 Solución
 
 ## 🏷️ Tipo de patrón
 
 **Creacional**  
-Nos dice **cómo crear un objeto complicado** sin enredarnos con un montón de constructores.
-Un Automovil tiene muchísimas opciones (motor, color, llantas, extras…), y este patrón permite armarlo paso a paso, con valores por defecto y la posibilidad de clonarlo y modificar partes sin complicar el código.
+Este patrón se centra en **cómo se crean los objetos**, especialmente cuando son complejos y tienen muchos atributos opcionales. Permite separar la construcción de la lógica del objeto y facilita la flexibilidad y mantenimiento del código.
 
 ## 🧠 Patrón de diseño
 
-**Builder**  
-Sirve para armar objetos paso a paso, eligiendo solo lo que quieras sin tener que rellenar todo desde el principio. Además, una vez creado, el objeto es inmutable, lo que ayuda a evitar errores.
+**Builder**
 
-**Factory**  
-Da recetas listas de autos según el tipo: lujo, básico, deportivo…
-Es útil porque no tenemos que preocuparnos por llenar todos los campos obligatorios, la Factory ya los maneja por nosotros.
+Se seleccionó este patrón porque se necesita crear el objeto `Automovil` que puede tener muchísimas configuraciones. Sin el patrón, necesitaríamos constructores gigantes o muchas subclases para cubrir todas las combinaciones posibles, lo que haría el código difícil de mantener.
 
-**Prototype**
-Permite clonar un auto que ya existe y cambiar solo lo que necesites.
-Por ejemplo, tomas un Mercedes de lujo y lo conviertes en edición especial cambiando color, modelo o cualquier otro detalle sin afectar el auto original.
+### Qué aportan:
 
-**Justificación:**  
-Builder deja armar autos completos paso a paso y flexibles.
-Factory ahorra tiempo generando autos listos sin preocuparse de los campos obligatorios.
-Prototype ofrece la ventaja de clonar un auto existente y personalizarlo al instante, sin tener que empezar desde cero.
+- **Builder:** Permite armar autos paso a paso, seleccionando solo las opciones deseadas sin tener que llenar todo desde el principio. Mantiene el objeto inmutable una vez creado, evitando errores.
+
+- **Director:** Centraliza la construcción de autos según recetas prediseñadas (lujo, básico, deportivo), evitando duplicación de código y asegurando consistencia.
+
+### Cómo se utilizó en el proyecto:
+
+1. **AutomovilBuilder:** Permite construir un auto paso a paso, pudiendo modificar cualquiera de sus atributos opcionales.
+
+**Ejemplo práctico:**  
+Se toma un auto de lujo existente y se crea una “Edición Especial” cambiando solo algunas propiedades como color y modelo. Gracias a Builder, esto se hace fácilmente sin tocar la lógica del auto original ni repetir código.
 
 ## 🖼️ Diagrama de clases
 
-![Diagrama de clases](../Diagramas/Clases__Ejercicio_1.svg)
+![Diagrama de clases](../Diagramas/Clases__Ejercicio_1.drawio.svg)
 
 ## 💻 Código
 
-```csharp
-public class Program
-{
-    static void Main()
-    {
-        factory = new AutoDeLujoFactory();
-            Automovil autoDeLujo = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil de Lujo:\n{autoDeLujo}");
-
-            factory = new AutoBasicoFactory();
-            Automovil autoBasico = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil Básico:\n{autoBasico}");
-
-            factory = new AutoDeportivoFactory();
-            Automovil autoDeportivo = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil Deportivo:\n{autoDeportivo}");
-
-            var autoEspecial = new AutomovilBuilder(new AutoDeLujoFactory().CrearAutomovil())
-                        .SetColor("Rojo Metalizado")
-                        .SetModelo("Edición Especial")
-                        .SetAño(2026)
-                        .Build();
-
-            Console.WriteLine($"\n## Automóvil Especial:\n{autoEspecial}");
-    }
-}
-```
+[Clase program](./../Source/Ejercicio_1/Program.cs)
+[Clase Director](./../Source/Ejercicio_1/Builders/Director.cs)
+[Interfaz IAutomovilBuilder](./../Source/Ejercicio_1/Builders/IAutomovilBuilder.cs)
+[Clase AutomovilBuilder](./../Source/Ejercicio_1/Builders/AutomovilBuilder.cs)
+[Clase Automovil](./../Source/Ejercicio_1/Models/Automovil.cs)

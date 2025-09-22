@@ -2,102 +2,44 @@
 
 public class Automovil
 {
-    public string Marca { get; }
-    public string Modelo { get; }
-    public string Tipo { get; }
-    public int Año { get; }
-    public string Motor { get; }
-    public string Color { get; }
-    public string Llantas { get; }
-    public string Sonido { get; }
-    public string Interiores { get; }
-    public bool TechoSolar { get; }
-    public bool GPS { get; }
-    public string Volante { get; }
-    public string Transmision { get; }
-    public string Faros { get; }
-    public string Tapiceria { get; }
-    public bool AireAcondicionado { get; }
-    public bool CamaraReversa { get; }
-    public bool SensoresDelanteros { get; }
-    public bool SensoresTraseros { get; }
-    public bool VidriosElectricos { get; }
-    public bool EspejosElectricos { get; }
-    public bool BaulAutomatico { get; }
-    public bool Polarizado { get; }
-    public bool FrenosABS { get; }
-    public bool ControlEstabilidad { get; }
-    public bool AirbagsLaterales { get; }
-    public bool Alarma { get; }
-    public bool BloqueoCentral { get; }
-    public bool PantallaAndroidAuto { get; }
-    public bool ParlantesExtra { get; }
-    public bool DVDParaAtras { get; }
-    public bool GanchoRemolque { get; }
-    public bool ParrillaTecho { get; }
-    public bool Portavasos { get; }
-    public bool SoporteCelular { get; }
-    public string RinesPersonalizados { get; }
-    public bool LucesInterioresLED { get; }
-    public bool SonidoTumbaCarro { get; }
-
-    public Automovil(
-        string marca, string modelo, string tipo, int año, string motor, string color, string llantas, string sonido,
-        string interiores, bool techoSolar, bool gps, string volante, string transmision,
-        string faros, string tapiceria, bool aireAcondicionado, bool camaraReversa,
-        bool sensoresDelanteros, bool sensoresTraseros,
-        bool vidriosElectricos, bool espejosElectricos, bool baulAutomatico,
-        bool polarizado, bool frenosABS, bool controlEstabilidad,
-        bool airbagsLaterales, bool alarma, bool bloqueoCentral,
-        bool pantallaAndroidAuto, bool parlantesExtra, bool dvdParaAtras,
-        bool ganchoRemolque, bool parrillaTecho, bool portavasos, bool soporteCelular,
-        string rinesPersonalizados, bool lucesInterioresLED, bool sonidoTumbaCarro
-    )
-    {
-        Marca = marca;
-        Modelo = modelo;
-        Tipo = tipo;
-        Año = año;
-        Motor = motor;
-        Color = color;
-        Llantas = llantas;
-        Sonido = sonido;
-        Interiores = interiores;
-        TechoSolar = techoSolar;
-        GPS = gps;
-        Volante = volante;
-        Transmision = transmision;
-        Faros = faros;
-        Tapiceria = tapiceria;
-        AireAcondicionado = aireAcondicionado;
-        CamaraReversa = camaraReversa;
-        SensoresDelanteros = sensoresDelanteros;
-        SensoresTraseros = sensoresTraseros;
-        VidriosElectricos = vidriosElectricos;
-        EspejosElectricos = espejosElectricos;
-        BaulAutomatico = baulAutomatico;
-        Polarizado = polarizado;
-        FrenosABS = frenosABS;
-        ControlEstabilidad = controlEstabilidad;
-        AirbagsLaterales = airbagsLaterales;
-        Alarma = alarma;
-        BloqueoCentral = bloqueoCentral;
-        PantallaAndroidAuto = pantallaAndroidAuto;
-        ParlantesExtra = parlantesExtra;
-        DVDParaAtras = dvdParaAtras;
-        GanchoRemolque = ganchoRemolque;
-        ParrillaTecho = parrillaTecho;
-        Portavasos = portavasos;
-        SoporteCelular = soporteCelular;
-        RinesPersonalizados = rinesPersonalizados;
-        LucesInterioresLED = lucesInterioresLED;
-        SonidoTumbaCarro = sonidoTumbaCarro;
-    }
-
-    public Automovil Clone()
-    {
-        return (Automovil)this.MemberwiseClone();
-    }
+    public string Marca { get; init; }
+    public string Modelo { get; init; }
+    public string Tipo { get; init; }
+    public int Anio { get; init; }
+    public string Motor { get; init; }
+    public string Color { get; init; }
+    public string Llantas { get; init; }
+    public string Sonido { get; init; }
+    public string Interiores { get; init; }
+    public bool TechoSolar { get; init; }
+    public bool GPS { get; init; }
+    public string Volante { get; init; }
+    public string Transmision { get; init; }
+    public string Faros { get; init; }
+    public string Tapiceria { get; init; }
+    public bool AireAcondicionado { get; init; }
+    public bool CamaraReversa { get; init; }
+    public bool SensoresDelanteros { get; init; }
+    public bool SensoresTraseros { get; init; }
+    public bool VidriosElectricos { get; init; }
+    public bool EspejosElectricos { get; init; }
+    public bool BaulAutomatico { get; init; }
+    public bool Polarizado { get; init; }
+    public bool FrenosABS { get; init; }
+    public bool ControlEstabilidad { get; init; }
+    public bool AirbagsLaterales { get; init; }
+    public bool Alarma { get; init; }
+    public bool BloqueoCentral { get; init; }
+    public bool PantallaAndroidAuto { get; init; }
+    public bool ParlantesExtra { get; init; }
+    public bool DVDParaAtras { get; init; }
+    public bool GanchoRemolque { get; init; }
+    public bool ParrillaTecho { get; init; }
+    public bool Portavasos { get; init; }
+    public bool SoporteCelular { get; init; }
+    public string RinesPersonalizados { get; init; }
+    public bool LucesInterioresLED { get; init; }
+    public bool SonidoTumbaCarro { get; init; }
 
     public override string ToString()
     {
@@ -124,7 +66,7 @@ public class Automovil
         AddIfNotEmpty("Marca", Marca);
         AddIfNotEmpty("Modelo", Modelo);
         AddIfNotEmpty("Tipo", Tipo);
-        AddIfGreaterThanZero("Año", Año);
+        AddIfGreaterThanZero("Año", Anio);
         AddIfNotEmpty("Motor", Motor);
         AddIfNotEmpty("Color", Color);
         AddIfNotEmpty("Llantas", Llantas);

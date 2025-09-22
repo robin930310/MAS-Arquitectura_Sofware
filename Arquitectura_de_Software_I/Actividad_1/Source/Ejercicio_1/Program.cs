@@ -1,38 +1,60 @@
 ﻿using Ejercicio_1.Builders;
-using Ejercicio_1.Factories;
 using Ejercicio_1.Models;
 
 class Program
 {
     static void Main()
     {
-        AutomovilFactory factory;
 
-        try
-        {
-            factory = new AutoDeLujoFactory();
-            Automovil autoDeLujo = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil de Lujo:\n{autoDeLujo}");
+        // Se Crea la instancia del Builder
+        IAutomovilBuilder builder = new AutomovilBuilder();
+        Director director = new Director(builder);
 
-            factory = new AutoBasicoFactory();
-            Automovil autoBasico = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil Básico:\n{autoBasico}");
 
-            factory = new AutoDeportivoFactory();
-            Automovil autoDeportivo = factory.CrearAutomovil();
-            Console.WriteLine($"\n## Automóvil Deportivo:\n{autoDeportivo}");
+        // Ejemplo #1
+        // Se Crea un Vehiculo con el "Builder" sin usar el "Director"
+        Automovil autoRenault = builder
+                    .Reset()
+                    .SetMarca("Renault")
+                    .SetModelo("Logan")
+                    .SetTipo("Familiar")
+                    .SetAnio(2025)
+                    .SetMotor("V4 1.6L")
+                    .SetColor("Negro")
+                    .SetLlantas("17")
+                    .SetVolante("Cuero")
+                    .SetTransmision("Automática")
+                    .SetFaros("Alogenos")
+                    .SetTapiceria("Poliester")
+                    .Build();
 
-            var autoEspecial = new AutomovilBuilder(new AutoDeLujoFactory().CrearAutomovil())
-                        .SetColor("Rojo Metalizado")
-                        .SetModelo("Edición Especial")
-                        .SetAño(2026)
-                        .Build();
+        Console.WriteLine("Ejemplo #1");
+        Console.WriteLine(autoRenault);
 
-            Console.WriteLine($"\n## Automóvil Especial:\n{autoEspecial}");
-        }
-        catch (InvalidOperationException ex)
-        {
-            Console.WriteLine($"Error al crear el auto especial: {ex.Message}");
-        }
+
+        // Ejemplo #2
+        // Se crea un vehiculo con el "Builder + Director"
+        Automovil autoDeportivo = director.AutomovilDeportivo().Build();
+
+        Console.WriteLine("Ejemplo #2");
+        Console.WriteLine(autoDeportivo);
+
+
+        // Ejemplo #3
+        // Se crea un vehiculo con el "Builder + Director", modificando una propiedad
+        Automovil autoDeLujo = director.AutomovilDeLujo()
+                                       .SetDVDParaAtras(true)
+                                       .SetGanchoRemolque(true)
+                                       .SetParrillaTecho(true)
+                                       .SetPortavasos(true)
+                                       .SetSoporteCelular(true)
+                                       .SetRinesPersonalizados("20\" Cromado")
+                                       .SetLucesInterioresLED(true)
+                                       .SetSonidoTumbaCarro(true)
+                                       .Build();
+
+
+        Console.WriteLine("Ejemplo #3");
+        Console.WriteLine(autoDeLujo);
     }
 }
