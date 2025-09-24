@@ -90,7 +90,7 @@ Los usuarios dependen de interfaces (IChannel) y no de implementaciones concreta
 - [`ChatRoom`](./../Source/Ejercicio_3/Mediator/ChatRoom.cs): Implementación concreta del mediador que registra usuarios y distribuye los mensajes.
 - [`User`](./../Source/Ejercicio_3/Entities/User.cs): Cada usuario conoce solo al mediador y usa los métodos `Send` y `Receive`.
 - [`Message`](./../Source/Ejercicio_3/Entities/Message.cs): Representa el contenido de un mensaje (remitente, texto, timestamp, leídos).
-- [`IMessageNotifier`](./../Source/Ejercicio_3/Services/IMessageNotifier.cs) y [`ConsoleMessageNotifier`](./Services/ConsoleMessageNotifier.cs): Notificadores que muestran los mensajes en la consola.
+- [`IMessageNotifier`](./../Source/Ejercicio_3/Services/IMessageNotifier.cs) y [`ConsoleMessageNotifier`](./../Source/Ejercicio_3/ConsoleMessageNotifier.cs): Notificadores que muestran los mensajes en la consola.
 - [`Program`](./../Source/Ejercicio_3/Program.cs): Punto de entrada que arma la aplicación, crea usuarios, salas y maneja la CLI.
 
 ## 📌 Conclusión
