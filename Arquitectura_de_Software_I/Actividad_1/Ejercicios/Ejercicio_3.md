@@ -96,6 +96,9 @@ Los usuarios dependen de interfaces (IChannel) y no de implementaciones concreta
 ## 📌 Conclusión
 
 El patrón Mediator nos permitió:
+
 ✅ Quitar la maraña de conexiones entre usuarios.
+
 ✅ Centralizar la comunicación en un solo punto (ChatRoom).
+
 ✅ Preparar el sistema para crecer sin romper nada.
