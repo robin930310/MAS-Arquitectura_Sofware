@@ -378,12 +378,12 @@ El **Patrón Builder con Atributos y Reflexión** es especialmente útil cuando:
 
 Índice de las clases principales:
 
-- [Clase Program](./../../Source/Ejercicio_1/Program.cs)
-- [Clase Director](./../../Source/Ejercicio_1/Builders/Director.cs)
-- [Interfaz IAutomovilBuilder](./../../Source/Ejercicio_1/Builders/IAutomovilBuilder.cs)
-- [Clase AutomovilBuilder](./../../Source/Ejercicio_1/Builders/AutomovilBuilder.cs)
-- [Clase Automovil](./../../Source/Ejercicio_1/Models/Automovil.cs)
-- [Clase TiposAutomovil](./../../Source/Ejercicio_1/Models/TiposAutomovil.cs)
+- [Clase Program](./../../Source/Ejercicio1.Builder/Program.cs)
+- [Clase Director](./../../Source/Ejercicio1.Builder/Builders/Director.cs)
+- [Interfaz IAutomovilBuilder](./../../Source/Ejercicio1.Builder/Builders/IAutomovilBuilder.cs)
+- [Clase AutomovilBuilder](./../../Source/Ejercicio1.Builder/Builders/AutomovilBuilder.cs)
+- [Clase Automovil](./../../Source/Ejercicio1.Builder/Models/Automovil.cs)
+- [Clase TiposAutomovil](./../../Source/Ejercicio1.Builder/Models/TiposAutomovil.cs)
 
 ---
 
@@ -410,10 +410,10 @@ El **Patrón Builder con Atributos y Reflexión** es especialmente útil cuando:
 
 ### **Archivos Modificados:**
 
-- ✅ [`Automovil`](./../../Source/Ejercicio_1/Models/Automovil.cs) - Agregados atributos y reflexión
-- ✅ [`TiposAutomovil`](./../../Source/Ejercicio_1/Models/TiposAutomovil.cs) - Agregadas descripciones a enums
-- ✅ [`AutomovilBuilder`](./../../Source/Ejercicio_1/Builders/AutomovilBuilder.cs) - Reemplazado con versión mejorada
-- ✅ [`Director`](./../../Source/Ejercicio_1/Builders/Director.cs) - Reemplazado con versión mejorada
+- ✅ [`Automovil`](./../../Source/Ejercicio1.Builder/Models/Automovil.cs) - Agregados atributos y reflexión
+- ✅ [`TiposAutomovil`](./../../Source/Ejercicio1.Builder/Models/TiposAutomovil.cs) - Agregadas descripciones a enums
+- ✅ [`AutomovilBuilder`](./../../Source/Ejercicio1.Builder/Builders/AutomovilBuilder.cs) - Reemplazado con versión mejorada
+- ✅ [`Director`](./../../Source/Ejercicio1.Builder/Builders/Director.cs) - Reemplazado con versión mejorada
 
 ### **Archivos Eliminados:**
 

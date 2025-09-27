@@ -2,17 +2,17 @@
 
 Diseñar arquitecturas de software utilizando **estilos y patrones arquitectónicos reconocidos**, asegurando que las soluciones propuestas sean:
 
-- 📈 Escalables  
-- 🧩 Mantenibles  
+- 📈 Escalables
+- 🧩 Mantenibles
 - 📋 Alineadas con los requisitos técnicos y del negocio
 
 ## 📊 Indicadores de desempeño
 
 Evaluar la **calidad de las arquitecturas de software** mediante la aplicación de técnicas de evaluación y aseguramiento de atributos de calidad, como:
 
-- ⚡ Rendimiento  
-- 🔐 Seguridad  
-- 🛡️ Fiabilidad  
+- ⚡ Rendimiento
+- 🔐 Seguridad
+- 🛡️ Fiabilidad
 
 Usando herramientas y metodologías avanzadas 🧪.
 
@@ -27,6 +27,6 @@ En los siguientes tres ejercicios deberás:
 
 ## 🧪 Ejercicios
 
-* 🚗 [Ejercicio 1: Compañía automotriz](./Ejercicios/Ejercicio_1.md)
-* 📣 [Ejercicio 2: Gestión de notificaciones](./Ejercicios/Ejercicio_2.md)
-* 💬 [Ejercicio 3: Chat grupal](./Ejercicios/Ejercicio_3.md)
+- 🚗 [Ejercicio 1: Compañía automotriz](./Docs/Ejercicio_1/README.md)
+- 📣 [Ejercicio 2: Gestión de notificaciones](./Docs/Ejercicio_2/README.md)
+- 💬 [Ejercicio 3: Chat grupal](./Ejercicios/Ejercicio_3.md)
