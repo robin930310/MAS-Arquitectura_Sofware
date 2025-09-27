@@ -1,155 +1,127 @@
-﻿using Ejercicio_1.Models;
+﻿using System.Reflection;
+using Ejercicio_1.Models;
 
 namespace Ejercicio_1.Builders;
 
+/// <summary>
+/// Implementación del Builder usando reflexión para reducir código repetitivo
+/// </summary>
 public class AutomovilBuilder : IAutomovilBuilder
 {
-    private Automovil _baseAutomovil;
-
-    private string _marca;
-    private string _modelo;
-    private string _tipo;
-    private int? _anio;
-    private string _motor;
-    private string _color;
-    private string _llantas;
-    private string _sonido;
-    private string _interiores;
-    private bool _techoSolar;
-    private bool _gps;
-    private string _volante;
-    private string _transmision;
-    private string _faros;
-    private string _tapiceria;
-    private bool _aireAcondicionado;
-    private bool _camaraReversa;
-    private bool _sensoresDelanteros;
-    private bool _sensoresTraseros;
-    private bool _vidriosElectricos;
-    private bool _espejosElectricos;
-    private bool _baulAutomatico;
-    private bool _polarizado;
-    private bool _frenosABS;
-    private bool _controlEstabilidad;
-    private bool _airbagsLaterales;
-    private bool _alarma;
-    private bool _bloqueoCentral;
-    private bool _pantallaAndroidAuto;
-    private bool _parlantesExtra;
-    private bool _dvdParaAtras;
-    private bool _ganchoRemolque;
-    private bool _parrillaTecho;
-    private bool _portavasos;
-    private bool _soporteCelular;
-    private string _rinesPersonalizados;
-    private bool _lucesInterioresLED;
-    private bool _sonidoTumbaCarro;
-
-    public AutomovilBuilder()
-    {
-        this._baseAutomovil = new Automovil();
-    }
+    // Diccionario para almacenar los valores de las propiedades
+    private readonly Dictionary<string, object> _propiedades = new();
 
     public IAutomovilBuilder Reset()
     {
-        this._baseAutomovil = new Automovil();
+        _propiedades.Clear();
+
+        // Usar reflexión para resetear automáticamente todas las propiedades
+        var tipoAutomovil = typeof(Automovil);
+        var propiedades = tipoAutomovil.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+        foreach (var prop in propiedades)
+        {
+            if (prop.PropertyType == typeof(bool))
+            {
+                _propiedades[prop.Name] = false;
+            }
+            else if (prop.PropertyType == typeof(string))
+            {
+                _propiedades[prop.Name] = string.Empty;
+            }
+            else if (prop.PropertyType == typeof(int))
+            {
+                _propiedades[prop.Name] = 0;
+            }
+            // Para enums, se mantiene el valor por defecto (primera opción)
+        }
+
         return this;
     }
 
-    public IAutomovilBuilder SetMarca(string marca) { _marca = marca; return this; }
-    public IAutomovilBuilder SetModelo(string modelo) { _modelo = modelo; return this; }
-    public IAutomovilBuilder SetTipo(string tipo) { _tipo = tipo; return this; }
-    public IAutomovilBuilder SetAnio(int anio) { _anio = anio; return this; }
-    public IAutomovilBuilder SetMotor(string motor) { _motor = motor; return this; }
-    public IAutomovilBuilder SetColor(string color) { _color = color; return this; }
-    public IAutomovilBuilder SetLlantas(string llantas) { _llantas = llantas; return this; }
-    public IAutomovilBuilder SetSonido(string sonido) { _sonido = sonido; return this; }
-    public IAutomovilBuilder SetInteriores(string interiores) { _interiores = interiores; return this; }
-    public IAutomovilBuilder SetTechoSolar(bool techoSolar) { _techoSolar = techoSolar; return this; }
-    public IAutomovilBuilder SetGPS(bool gps) { _gps = gps; return this; }
-    public IAutomovilBuilder SetVolante(string volante) { _volante = volante; return this; }
-    public IAutomovilBuilder SetTransmision(string transmision) { _transmision = transmision; return this; }
-    public IAutomovilBuilder SetFaros(string faros) { _faros = faros; return this; }
-    public IAutomovilBuilder SetTapiceria(string tapiceria) { _tapiceria = tapiceria; return this; }
-    public IAutomovilBuilder SetAireAcondicionado(bool aireAcondicionado) { _aireAcondicionado = aireAcondicionado; return this; }
-    public IAutomovilBuilder SetCamaraReversa(bool camaraReversa) { _camaraReversa = camaraReversa; return this; }
-    public IAutomovilBuilder SetSensoresDelanteros(bool value) { _sensoresDelanteros = value; return this; }
-    public IAutomovilBuilder SetSensoresTraseros(bool value) { _sensoresTraseros = value; return this; }
-    public IAutomovilBuilder SetVidriosElectricos(bool value) { _vidriosElectricos = value; return this; }
-    public IAutomovilBuilder SetEspejosElectricos(bool value) { _espejosElectricos = value; return this; }
-    public IAutomovilBuilder SetBaulAutomatico(bool value) { _baulAutomatico = value; return this; }
-    public IAutomovilBuilder SetPolarizado(bool value) { _polarizado = value; return this; }
-    public IAutomovilBuilder SetFrenosABS(bool value) { _frenosABS = value; return this; }
-    public IAutomovilBuilder SetControlEstabilidad(bool value) { _controlEstabilidad = value; return this; }
-    public IAutomovilBuilder SetAirbagsLaterales(bool value) { _airbagsLaterales = value; return this; }
-    public IAutomovilBuilder SetAlarma(bool value) { _alarma = value; return this; }
-    public IAutomovilBuilder SetBloqueoCentral(bool value) { _bloqueoCentral = value; return this; }
-    public IAutomovilBuilder SetPantallaAndroidAuto(bool value) { _pantallaAndroidAuto = value; return this; }
-    public IAutomovilBuilder SetParlantesExtra(bool value) { _parlantesExtra = value; return this; }
-    public IAutomovilBuilder SetDVDParaAtras(bool value) { _dvdParaAtras = value; return this; }
-    public IAutomovilBuilder SetGanchoRemolque(bool value) { _ganchoRemolque = value; return this; }
-    public IAutomovilBuilder SetParrillaTecho(bool value) { _parrillaTecho = value; return this; }
-    public IAutomovilBuilder SetPortavasos(bool value) { _portavasos = value; return this; }
-    public IAutomovilBuilder SetSoporteCelular(bool value) { _soporteCelular = value; return this; }
-    public IAutomovilBuilder SetRinesPersonalizados(string rines) { _rinesPersonalizados = rines; return this; }
-    public IAutomovilBuilder SetLucesInterioresLED(bool value) { _lucesInterioresLED = value; return this; }
-    public IAutomovilBuilder SetSonidoTumbaCarro(bool value) { _sonidoTumbaCarro = value; return this; }
+    // Métodos para propiedades básicas (obligatorias)
+    public IAutomovilBuilder SetMarca(string marca) { _propiedades["Marca"] = marca ?? string.Empty; return this; }
+    public IAutomovilBuilder SetModelo(string modelo) { _propiedades["Modelo"] = modelo ?? string.Empty; return this; }
+    public IAutomovilBuilder SetTipo(TipoAutomovil tipo) { _propiedades["Tipo"] = tipo; return this; }
+    public IAutomovilBuilder SetAnio(int año) { _propiedades["Anio"] = año; return this; }
+    public IAutomovilBuilder SetMotor(TipoMotor motor) { _propiedades["Motor"] = motor; return this; }
+    public IAutomovilBuilder SetColor(string color) { _propiedades["Color"] = color ?? string.Empty; return this; }
+    public IAutomovilBuilder SetLlantas(string llantas) { _propiedades["Llantas"] = llantas ?? string.Empty; return this; }
+    public IAutomovilBuilder SetTransmision(TipoTransmision transmision) { _propiedades["Transmision"] = transmision; return this; }
+    public IAutomovilBuilder SetFaros(TipoFaros faros) { _propiedades["Faros"] = faros; return this; }
+    public IAutomovilBuilder SetTapiceria(TipoTapiceria tapiceria) { _propiedades["Tapiceria"] = tapiceria; return this; }
+
+    // Métodos para propiedades opcionales
+    public IAutomovilBuilder SetSonido(string sonido) { _propiedades["Sonido"] = sonido ?? string.Empty; return this; }
+    public IAutomovilBuilder SetInteriores(string interiores) { _propiedades["Interiores"] = interiores ?? string.Empty; return this; }
+    public IAutomovilBuilder SetVolante(string volante) { _propiedades["Volante"] = volante ?? string.Empty; return this; }
+    public IAutomovilBuilder SetRinesPersonalizados(string rines) { _propiedades["RinesPersonalizados"] = rines ?? string.Empty; return this; }
+
+    // Métodos para características opcionales (booleanas) - Usando reflexión para simplificar
+    public IAutomovilBuilder SetTechoSolar(bool techoSolar) { _propiedades["TechoSolar"] = techoSolar; return this; }
+    public IAutomovilBuilder SetGPS(bool gps) { _propiedades["GPS"] = gps; return this; }
+    public IAutomovilBuilder SetAireAcondicionado(bool aireAcondicionado) { _propiedades["AireAcondicionado"] = aireAcondicionado; return this; }
+    public IAutomovilBuilder SetCamaraReversa(bool camaraReversa) { _propiedades["CamaraReversa"] = camaraReversa; return this; }
+    public IAutomovilBuilder SetSensoresDelanteros(bool sensoresDelanteros) { _propiedades["SensoresDelanteros"] = sensoresDelanteros; return this; }
+    public IAutomovilBuilder SetSensoresTraseros(bool sensoresTraseros) { _propiedades["SensoresTraseros"] = sensoresTraseros; return this; }
+    public IAutomovilBuilder SetVidriosElectricos(bool vidriosElectricos) { _propiedades["VidriosElectricos"] = vidriosElectricos; return this; }
+    public IAutomovilBuilder SetEspejosElectricos(bool espejosElectricos) { _propiedades["EspejosElectricos"] = espejosElectricos; return this; }
+    public IAutomovilBuilder SetBaulAutomatico(bool baulAutomatico) { _propiedades["BaulAutomatico"] = baulAutomatico; return this; }
+    public IAutomovilBuilder SetPolarizado(bool polarizado) { _propiedades["Polarizado"] = polarizado; return this; }
+    public IAutomovilBuilder SetFrenosABS(bool frenosABS) { _propiedades["FrenosABS"] = frenosABS; return this; }
+    public IAutomovilBuilder SetControlEstabilidad(bool controlEstabilidad) { _propiedades["ControlEstabilidad"] = controlEstabilidad; return this; }
+    public IAutomovilBuilder SetAirbagsLaterales(bool airbagsLaterales) { _propiedades["AirbagsLaterales"] = airbagsLaterales; return this; }
+    public IAutomovilBuilder SetAlarma(bool alarma) { _propiedades["Alarma"] = alarma; return this; }
+    public IAutomovilBuilder SetBloqueoCentral(bool bloqueoCentral) { _propiedades["BloqueoCentral"] = bloqueoCentral; return this; }
+    public IAutomovilBuilder SetPantallaAndroidAuto(bool pantallaAndroidAuto) { _propiedades["PantallaAndroidAuto"] = pantallaAndroidAuto; return this; }
+    public IAutomovilBuilder SetParlantesExtra(bool parlantesExtra) { _propiedades["ParlantesExtra"] = parlantesExtra; return this; }
+    public IAutomovilBuilder SetDVDParaAtras(bool dvdParaAtras) { _propiedades["DVDParaAtras"] = dvdParaAtras; return this; }
+    public IAutomovilBuilder SetGanchoRemolque(bool ganchoRemolque) { _propiedades["GanchoRemolque"] = ganchoRemolque; return this; }
+    public IAutomovilBuilder SetParrillaTecho(bool parrillaTecho) { _propiedades["ParrillaTecho"] = parrillaTecho; return this; }
+    public IAutomovilBuilder SetPortavasos(bool portavasos) { _propiedades["Portavasos"] = portavasos; return this; }
+    public IAutomovilBuilder SetSoporteCelular(bool soporteCelular) { _propiedades["SoporteCelular"] = soporteCelular; return this; }
+    public IAutomovilBuilder SetLucesInterioresLED(bool lucesInterioresLED) { _propiedades["LucesInterioresLED"] = lucesInterioresLED; return this; }
+    public IAutomovilBuilder SetSonidoTumbaCarro(bool sonidoTumbaCarro) { _propiedades["SonidoTumbaCarro"] = sonidoTumbaCarro; return this; }
 
     public Automovil Build()
     {
         // Validación de campos obligatorios
-        if (_marca == null) throw new InvalidOperationException("Marca no puede ser null");
-        if (_modelo == null) throw new InvalidOperationException("Modelo no puede ser null");
-        if (_tipo == null) throw new InvalidOperationException("Tipo no puede ser null");
-        if (_anio == null) throw new InvalidOperationException("Año no puede ser null");
-        if (_motor == null) throw new InvalidOperationException("Motor no puede ser null");
-        if (_color == null) throw new InvalidOperationException("Color no puede ser null");
-        if (_llantas == null) throw new InvalidOperationException("Llantas no pueden ser null");
-        if (_volante == null) throw new InvalidOperationException("Volante no puede ser null");
-        if (_transmision == null) throw new InvalidOperationException("Transmision no puede ser null");
-        if (_faros == null) throw new InvalidOperationException("Faros no pueden ser null");
-        if (_tapiceria == null) throw new InvalidOperationException("Tapiceria no pueden ser null");
+        var errores = new List<string>();
 
-        return new Automovil
+        if (!_propiedades.ContainsKey("Marca") || string.IsNullOrWhiteSpace((string)_propiedades["Marca"]))
+            errores.Add("Marca es obligatoria");
+        if (!_propiedades.ContainsKey("Modelo") || string.IsNullOrWhiteSpace((string)_propiedades["Modelo"]))
+            errores.Add("Modelo es obligatorio");
+        if (!_propiedades.ContainsKey("Anio") || (int)_propiedades["Anio"] <= 1900)
+            errores.Add("Año debe ser válido (mayor a 1900)");
+        if (!_propiedades.ContainsKey("Color") || string.IsNullOrWhiteSpace((string)_propiedades["Color"]))
+            errores.Add("Color es obligatorio");
+        if (!_propiedades.ContainsKey("Llantas") || string.IsNullOrWhiteSpace((string)_propiedades["Llantas"]))
+            errores.Add("Llantas son obligatorias");
+
+        if (errores.Any())
         {
-            Marca = _marca!,
-            Modelo = _modelo!,
-            Tipo = _tipo ?? "Básico",
-            Anio = _anio!.Value,
-            Motor = _motor!,
-            Color = _color!,
-            Llantas = _llantas!,
-            Sonido = _sonido ?? "",
-            Interiores = _interiores ?? "",
-            TechoSolar = _techoSolar,
-            GPS = _gps,
-            Volante = _volante ?? "",
-            Transmision = _transmision!,
-            Faros = _faros ?? "",
-            Tapiceria = _tapiceria ?? "",
-            AireAcondicionado = _aireAcondicionado,
-            CamaraReversa = _camaraReversa,
-            SensoresDelanteros = _sensoresDelanteros,
-            SensoresTraseros = _sensoresTraseros,
-            VidriosElectricos = _vidriosElectricos,
-            EspejosElectricos = _espejosElectricos,
-            BaulAutomatico = _baulAutomatico,
-            Polarizado = _polarizado,
-            FrenosABS = _frenosABS,
-            ControlEstabilidad = _controlEstabilidad,
-            AirbagsLaterales = _airbagsLaterales,
-            Alarma = _alarma,
-            BloqueoCentral = _bloqueoCentral,
-            PantallaAndroidAuto = _pantallaAndroidAuto,
-            ParlantesExtra = _parlantesExtra,
-            DVDParaAtras = _dvdParaAtras,
-            GanchoRemolque = _ganchoRemolque,
-            ParrillaTecho = _parrillaTecho,
-            Portavasos = _portavasos,
-            SoporteCelular = _soporteCelular,
-            RinesPersonalizados = _rinesPersonalizados ?? "",
-            LucesInterioresLED = _lucesInterioresLED,
-            SonidoTumbaCarro = _sonidoTumbaCarro
-        };
+            throw new InvalidOperationException($"Error en la construcción del automóvil: {string.Join(", ", errores)}");
+        }
+
+        // Usar reflexión para crear el automóvil automáticamente
+        var automovil = new Automovil();
+        var tipoAutomovil = typeof(Automovil);
+
+        foreach (var kvp in _propiedades)
+        {
+            var propiedad = tipoAutomovil.GetProperty(kvp.Key);
+            if (propiedad != null && propiedad.CanWrite)
+            {
+                // Para propiedades init-only, necesitamos usar reflection
+                var campo = tipoAutomovil.GetField($"<{kvp.Key}>k__BackingField", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (campo != null)
+                {
+                    campo.SetValue(automovil, kvp.Value);
+                }
+            }
+        }
+
+        return automovil;
     }
 }
