@@ -1,50 +1,65 @@
 using Ejercicio_1.Models;
 
-namespace Ejercicio_1.Builders
+namespace Ejercicio_1.Builders;
+
+/// <summary>
+/// Interfaz que define el contrato para construir un automóvil paso a paso
+/// </summary>
+public interface IAutomovilBuilder
 {
-    public interface IAutomovilBuilder
-    {
-        public IAutomovilBuilder Reset();
+    /// <summary>
+    /// Reinicia el builder para comenzar una nueva construcción
+    /// </summary>
+    IAutomovilBuilder Reset();
 
-        public IAutomovilBuilder SetMarca(string marca);
-        public IAutomovilBuilder SetModelo(string modelo);
-        public IAutomovilBuilder SetTipo(string tipo);
-        public IAutomovilBuilder SetAnio(int año);
-        public IAutomovilBuilder SetMotor(string motor);
-        public IAutomovilBuilder SetColor(string color);
-        public IAutomovilBuilder SetLlantas(string llantas);
-        public IAutomovilBuilder SetSonido(string sonido);
-        public IAutomovilBuilder SetInteriores(string interiores);
-        public IAutomovilBuilder SetTechoSolar(bool techoSolar);
-        public IAutomovilBuilder SetGPS(bool gps);
-        public IAutomovilBuilder SetVolante(string volante);
-        public IAutomovilBuilder SetTransmision(string transmision);
-        public IAutomovilBuilder SetFaros(string faros);
-        public IAutomovilBuilder SetTapiceria(string tapiceria);
-        public IAutomovilBuilder SetAireAcondicionado(bool aireAcondicionado);
-        public IAutomovilBuilder SetCamaraReversa(bool camaraReversa);
-        public IAutomovilBuilder SetSensoresDelanteros(bool value);
-        public IAutomovilBuilder SetSensoresTraseros(bool value);
-        public IAutomovilBuilder SetVidriosElectricos(bool value);
-        public IAutomovilBuilder SetEspejosElectricos(bool value);
-        public IAutomovilBuilder SetBaulAutomatico(bool value);
-        public IAutomovilBuilder SetPolarizado(bool value);
-        public IAutomovilBuilder SetFrenosABS(bool value);
-        public IAutomovilBuilder SetControlEstabilidad(bool value);
-        public IAutomovilBuilder SetAirbagsLaterales(bool value);
-        public IAutomovilBuilder SetAlarma(bool value);
-        public IAutomovilBuilder SetBloqueoCentral(bool value);
-        public IAutomovilBuilder SetPantallaAndroidAuto(bool value);
-        public IAutomovilBuilder SetParlantesExtra(bool value);
-        public IAutomovilBuilder SetDVDParaAtras(bool value);
-        public IAutomovilBuilder SetGanchoRemolque(bool value);
-        public IAutomovilBuilder SetParrillaTecho(bool value);
-        public IAutomovilBuilder SetPortavasos(bool value);
-        public IAutomovilBuilder SetSoporteCelular(bool value);
-        public IAutomovilBuilder SetRinesPersonalizados(string rines);
-        public IAutomovilBuilder SetLucesInterioresLED(bool value);
-        public IAutomovilBuilder SetSonidoTumbaCarro(bool value);
+    // Métodos para propiedades básicas (obligatorias)
+    IAutomovilBuilder SetMarca(string marca);
+    IAutomovilBuilder SetModelo(string modelo);
+    IAutomovilBuilder SetTipo(TipoAutomovil tipo);
+    IAutomovilBuilder SetAnio(int año);
+    IAutomovilBuilder SetMotor(TipoMotor motor);
+    IAutomovilBuilder SetColor(string color);
+    IAutomovilBuilder SetLlantas(string llantas);
+    IAutomovilBuilder SetTransmision(TipoTransmision transmision);
+    IAutomovilBuilder SetFaros(TipoFaros faros);
+    IAutomovilBuilder SetTapiceria(TipoTapiceria tapiceria);
 
-        public Automovil Build();
-    }
+    // Métodos para propiedades opcionales
+    IAutomovilBuilder SetSonido(string sonido);
+    IAutomovilBuilder SetInteriores(string interiores);
+    IAutomovilBuilder SetVolante(string volante);
+    IAutomovilBuilder SetRinesPersonalizados(string rines);
+
+    // Métodos para características opcionales (booleanas)
+    IAutomovilBuilder SetTechoSolar(bool techoSolar);
+    IAutomovilBuilder SetGPS(bool gps);
+    IAutomovilBuilder SetAireAcondicionado(bool aireAcondicionado);
+    IAutomovilBuilder SetCamaraReversa(bool camaraReversa);
+    IAutomovilBuilder SetSensoresDelanteros(bool sensoresDelanteros);
+    IAutomovilBuilder SetSensoresTraseros(bool sensoresTraseros);
+    IAutomovilBuilder SetVidriosElectricos(bool vidriosElectricos);
+    IAutomovilBuilder SetEspejosElectricos(bool espejosElectricos);
+    IAutomovilBuilder SetBaulAutomatico(bool baulAutomatico);
+    IAutomovilBuilder SetPolarizado(bool polarizado);
+    IAutomovilBuilder SetFrenosABS(bool frenosABS);
+    IAutomovilBuilder SetControlEstabilidad(bool controlEstabilidad);
+    IAutomovilBuilder SetAirbagsLaterales(bool airbagsLaterales);
+    IAutomovilBuilder SetAlarma(bool alarma);
+    IAutomovilBuilder SetBloqueoCentral(bool bloqueoCentral);
+    IAutomovilBuilder SetPantallaAndroidAuto(bool pantallaAndroidAuto);
+    IAutomovilBuilder SetParlantesExtra(bool parlantesExtra);
+    IAutomovilBuilder SetDVDParaAtras(bool dvdParaAtras);
+    IAutomovilBuilder SetGanchoRemolque(bool ganchoRemolque);
+    IAutomovilBuilder SetParrillaTecho(bool parrillaTecho);
+    IAutomovilBuilder SetPortavasos(bool portavasos);
+    IAutomovilBuilder SetSoporteCelular(bool soporteCelular);
+    IAutomovilBuilder SetLucesInterioresLED(bool lucesInterioresLED);
+    IAutomovilBuilder SetSonidoTumbaCarro(bool sonidoTumbaCarro);
+
+    /// <summary>
+    /// Construye y retorna el automóvil con todas las configuraciones establecidas
+    /// </summary>
+    /// <returns>Automóvil construido</returns>
+    /// <exception cref="InvalidOperationException">Si faltan propiedades obligatorias</exception>
+    Automovil Build();
 }

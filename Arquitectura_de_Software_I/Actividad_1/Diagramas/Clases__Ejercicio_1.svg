@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .class-box { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .interface-box { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .attribute-box { fill: #fff8e1; stroke: #f57c00; stroke-width: 2; }
+      .enum-box { fill: #e8f5e8; stroke: #388e3c; stroke-width: 2; }
+      .utility-box { fill: #fce4ec; stroke: #c2185b; stroke-width: 2; }
+      
+      .text { font-family: 'Arial', sans-serif; font-size: 11px; fill: #333; }
+      .title { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: #1976d2; }
+      .interface-title { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: #7b1fa2; }
+      .attribute-title { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: #f57c00; }
+      .enum-title { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: #388e3c; }
+      .utility-title { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; fill: #c2185b; }
+      
+      .method { font-family: 'Arial', sans-serif; font-size: 10px; fill: #555; }
+      .property { font-family: 'Arial', sans-serif; font-size: 10px; fill: #666; }
+      .separator { stroke: #1976d2; stroke-width: 1; }
+      .interface-separator { stroke: #7b1fa2; stroke-width: 1; }
+      .attribute-separator { stroke: #f57c00; stroke-width: 1; }
+      .enum-separator { stroke: #388e3c; stroke-width: 1; }
+      .utility-separator { stroke: #c2185b; stroke-width: 1; }
+      
+      .relationship { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .implements { stroke: #7b1fa2; stroke-width: 2; stroke-dasharray: 8,4; }
+      .uses { stroke: #666; stroke-width: 1.5; stroke-dasharray: 3,3; }
+      .creates { stroke: #4caf50; stroke-width: 2; }
+      
+      .relationship-label { font-family: 'Arial', sans-serif; font-size: 10px; fill: #333; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#666" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#4caf50" />
+    </marker>
+  </defs>
+
+  <!-- Título Principal -->
+  <text x="700" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1565c0">
+    Diagrama de Clases - Proyecto Automóvil con Reflexión y Atributos
+  </text>
+
+  <!-- === ATRIBUTOS PERSONALIZADOS === -->
+  <text x="50" y="60" font-family="Arial" font-size="16" font-weight="bold" fill="#f57c00">Atributos Personalizados</text>
+
+  <!-- CaracteristicaOpcionalAttribute -->
+  <rect x="50" y="70" width="180" height="100" class="attribute-box" rx="3"/>
+  <text x="140" y="90" text-anchor="middle" class="attribute-title">CaracteristicaOpcionalAttribute</text>
+  <line x1="140" y1="95" x2="140" y2="165" class="attribute-separator"/>
+  <text x="60" y="110" class="property">+ Nombre: string</text>
+  <text x="60" y="125" class="method">+ CaracteristicaOpcional(nombre: string)</text>
+  <text x="60" y="140" class="text">[AttributeUsage(Property)]</text>
+  <text x="60" y="155" class="text">Aplicado a propiedades booleanas</text>
+
+  <!-- DescripcionEnumAttribute -->
+  <rect x="50" y="180" width="180" height="100" class="attribute-box" rx="3"/>
+  <text x="140" y="200" text-anchor="middle" class="attribute-title">DescripcionEnumAttribute</text>
+  <line x1="140" y1="205" x2="140" y2="275" class="attribute-separator"/>
+  <text x="60" y="220" class="property">+ Descripcion: string</text>
+  <text x="60" y="235" class="method">+ DescripcionEnum(descripcion: string)</text>
+  <text x="60" y="250" class="text">[AttributeUsage(Field)]</text>
+  <text x="60" y="265" class="text">Aplicado a valores de enum</text>
+
+  <!-- PropiedadBuilderAttribute -->
+  <rect x="50" y="290" width="180" height="100" class="attribute-box" rx="3"/>
+  <text x="140" y="310" text-anchor="middle" class="attribute-title">PropiedadBuilderAttribute</text>
+  <line x1="140" y1="315" x2="140" y2="385" class="attribute-separator"/>
+  <text x="60" y="330" class="property">+ NombreMetodoSet: string</text>
+  <text x="60" y="345" class="property">+ ValorPorDefecto: object</text>
+  <text x="60" y="360" class="method">+ PropiedadBuilder(nombre, valor)</text>
+  <text x="60" y="375" class="text">Para automatizar Builder</text>
+
+  <!-- ConfiguracionVehiculoAttribute -->
+  <rect x="50" y="400" width="180" height="100" class="attribute-box" rx="3"/>
+  <text x="140" y="420" text-anchor="middle" class="attribute-title">ConfiguracionVehiculoAttribute</text>
+  <line x1="140" y1="425" x2="140" y2="495" class="attribute-separator"/>
+  <text x="60" y="440" class="property">+ CaracteristicasIncluidas: string[]</text>
+  <text x="60" y="455" class="method">+ ConfiguracionVehiculo(...caracteristicas)</text>
+  <text x="60" y="470" class="text">[AttributeUsage(Class)]</text>
+  <text x="60" y="485" class="text">Para configuraciones automáticas</text>
+
+  <!-- === CLASES PRINCIPALES === -->
+  <text x="300" y="60" font-family="Arial" font-size="16" font-weight="bold" fill="#1976d2">Clases Principales</text>
+
+  <!-- Automovil -->
+  <rect x="300" y="70" width="220" height="180" class="class-box" rx="3"/>
+  <text x="410" y="90" text-anchor="middle" class="title">Automovil</text>
+  <line x1="410" y1="95" x2="410" y2="245" class="separator"/>
+  
+  <text x="310" y="115" class="property">// Propiedades básicas</text>
+  <text x="310" y="130" class="property">+ Marca: string</text>
+  <text x="310" y="145" class="property">+ Modelo: string</text>
+  <text x="310" y="160" class="property">+ Tipo: TipoAutomovil</text>
+  <text x="310" y="175" class="property">+ Anio: int</text>
+  <text x="310" y="190" class="property">+ Motor: TipoMotor</text>
+  <text x="310" y="205" class="property">+ Color: string</text>
+  <text x="310" y="220" class="property">+ Llantas: string</text>
+  
+  <text x="310" y="240" class="method">+ ToString(): string</text>
+
+  <!-- IAutomovilBuilder -->
+  <rect x="550" y="70" width="200" height="180" class="interface-box" rx="3"/>
+  <text x="650" y="90" text-anchor="middle" class="interface-title">IAutomovilBuilder</text>
+  <line x1="650" y1="95" x2="650" y2="245" class="interface-separator"/>
+  
+  <text x="560" y="115" class="method">+ Reset(): IAutomovilBuilder</text>
+  <text x="560" y="130" class="method">+ SetMarca(marca: string): IAutomovilBuilder</text>
+  <text x="560" y="145" class="method">+ SetModelo(modelo: string): IAutomovilBuilder</text>
+  <text x="560" y="160" class="method">+ SetTipo(tipo: TipoAutomovil): IAutomovilBuilder</text>
+  <text x="560" y="175" class="method">+ SetAnio(año: int): IAutomovilBuilder</text>
+  <text x="560" y="190" class="method">+ SetMotor(motor: TipoMotor): IAutomovilBuilder</text>
+  <text x="560" y="205" class="method">+ SetColor(color: string): IAutomovilBuilder</text>
+  <text x="560" y="220" class="method">+ SetLlantas(llantas: string): IAutomovilBuilder</text>
+  <text x="560" y="235" class="method">+ SetTransmision(trans: TipoTransmision): IAutomovilBuilder</text>
+
+  <!-- AutomovilBuilder -->
+  <rect x="550" y="270" width="200" height="140" class="class-box" rx="3"/>
+  <text x="650" y="290" text-anchor="middle" class="title">AutomovilBuilder</text>
+  <line x1="650" y1="295" x2="650" y2="405" class="separator"/>
+  
+  <text x="560" y="315" class="property">- _propiedades: Dictionary&lt;string, object&gt;</text>
+  <text x="560" y="335" class="method">+ Reset(): IAutomovilBuilder</text>
+  <text x="560" y="350" class="method">+ SetTechoSolar(bool): IAutomovilBuilder</text>
+  <text x="560" y="365" class="method">+ SetGPS(bool): IAutomovilBuilder</text>
+  <text x="560" y="380" class="method">// ... más métodos Set</text>
+  <text x="560" y="395" class="method">+ Build(): Automovil</text>
+
+  <!-- Director -->
+  <rect x="780" y="70" width="200" height="160" class="class-box" rx="3"/>
+  <text x="880" y="90" text-anchor="middle" class="title">Director</text>
+  <line x1="880" y1="95" x2="880" y2="225" class="separator"/>
+  
+  <text x="790" y="115" class="property">- _builder: IAutomovilBuilder</text>
+  <text x="790" y="135" class="method">+ AutomovilBasico(): IAutomovilBuilder</text>
+  <text x="790" y="150" class="method">+ AutomovilDeLujo(): IAutomovilBuilder</text>
+  <text x="790" y="165" class="method">+ AutomovilDeportivo(): IAutomovilBuilder</text>
+  <text x="790" y="180" class="method">+ AutomovilSUV(): IAutomovilBuilder</text>
+  <text x="790" y="195" class="method">+ AutomovilPickup(): IAutomovilBuilder</text>
+  <text x="790" y="210" class="method">+ AplicarCaracteristicasPorTipo(): IAutomovilBuilder</text>
+
+  <!-- EnumHelper -->
+  <rect x="300" y="270" width="180" height="120" class="utility-box" rx="3"/>
+  <text x="390" y="290" text-anchor="middle" class="utility-title">EnumHelper</text>
+  <line x1="390" y1="295" x2="390" y2="385" class="utility-separator"/>
+  
+  <text x="310" y="315" class="method">+ GetDescripcion&lt;T&gt;(enumValue): string</text>
+  <text x="310" y="330" class="method">+ GetTodasLasDescripciones&lt;T&gt;(): Dictionary&lt;T, string&gt;</text>
+  <text x="310" y="345" class="method">+ ParseDescripcion&lt;T&gt;(descripcion): T</text>
+  <text x="310" y="360" class="text">Clase de utilidades estáticas</text>
+
+  <!-- === ENUMERACIONES === -->
+  <text x="50" y="550" font-family="Arial" font-size="16" font-weight="bold" fill="#388e3c">Enumeraciones con Descripciones</text>
+
+  <!-- TipoAutomovil -->
+  <rect x="50" y="560" width="140" height="120" class="enum-box" rx="3"/>
+  <text x="120" y="580" text-anchor="middle" class="enum-title">TipoAutomovil</text>
+  <line x1="120" y1="585" x2="120" y2="675" class="enum-separator"/>
+  <text x="60" y="605" class="text">[DescripcionEnum]</text>
+  <text x="60" y="620" class="text">Basico</text>
+  <text x="60" y="635" class="text">Familiar</text>
+  <text x="60" y="650" class="text">Deportivo</text>
+  <text x="60" y="665" class="text">DeLujo</text>
+
+  <!-- TipoMotor -->
+  <rect x="210" y="560" width="140" height="120" class="enum-box" rx="3"/>
+  <text x="280" y="580" text-anchor="middle" class="enum-title">TipoMotor</text>
+  <line x1="280" y1="585" x2="280" y2="675" class="enum-separator"/>
+  <text x="220" y="605" class="text">[DescripcionEnum]</text>
+  <text x="220" y="620" class="text">Basico</text>
+  <text x="220" y="635" class="text">Intermedio</text>
+  <text x="620" y="650" class="text">Potente</text>
+  <text x="220" y="665" class="text">Deportivo</text>
+
+  <!-- TipoTransmision -->
+  <rect x="370" y="560" width="140" height="120" class="enum-box" rx="3"/>
+  <text x="440" y="580" text-anchor="middle" class="enum-title">TipoTransmision</text>
+  <line x1="440" y1="585" x2="440" y2="675" class="enum-separator"/>
+  <text x="380" y="605" class="text">[DescripcionEnum]</text>
+  <text x="380" y="620" class="text">Manual</text>
+  <text x="380" y="635" class="text">Automatica</text>
+  <text x="380" y="650" class="text">CVT</text>
+  <text x="380" y="665" class="text">SemiAutomatica</text>
+
+  <!-- TipoFaros -->
+  <rect x="530" y="560" width="140" height="120" class="enum-box" rx="3"/>
+  <text x="600" y="580" text-anchor="middle" class="enum-title">TipoFaros</text>
+  <line x1="600" y1="585" x2="600" y2="675" class="enum-separator"/>
+  <text x="540" y="605" class="text">[DescripcionEnum]</text>
+  <text x="540" y="620" class="text">Halogeno</text>
+  <text x="540" y="635" class="text">Xenon</text>
+  <text x="540" y="650" class="text">LED</text>
+  <text x="540" y="665" class="text">Laser</text>
+
+  <!-- TipoTapiceria -->
+  <rect x="690" y="560" width="140" height="120" class="enum-box" rx="3"/>
+  <text x="760" y="580" text-anchor="middle" class="enum-title">TipoTapiceria</text>
+  <line x1="760" y1="585" x2="760" y2="675" class="enum-separator"/>
+  <text x="700" y="605" class="text">[DescripcionEnum]</text>
+  <text x="700" y="620" class="text">Tela</text>
+  <text x="700" y="635" class="text">Vinilo</text>
+  <text x="700" y="650" class="text">Cuero</text>
+  <text x="700" y="665" class="text">Alcantara</text>
+
+  <!-- === RELACIONES === -->
+  
+  <!-- AutomovilBuilder implements IAutomovilBuilder -->
+  <path d="M 650 270 L 650 250" class="relationship implements"/>
+  <text x="660" y="260" class="relationship-label">implements</text>
+
+  <!-- Director uses IAutomovilBuilder -->
+  <path d="M 780 150 L 750 150" class="relationship uses"/>
+  <text x="760" y="145" class="relationship-label">uses</text>
+
+  <!-- AutomovilBuilder creates Automovil -->
+  <path d="M 550 340 L 520 250" class="relationship creates" marker-end="url(#arrowhead-green)"/>
+  <text x="530" y="295" class="relationship-label">creates</text>
+
+  <!-- Director creates AutomovilBuilder -->
+  <path d="M 780 150 L 750 270" class="relationship creates" marker-end="url(#arrowhead-green)"/>
+  <text x="760" y="210" class="relationship-label">creates</text>
+
+  <!-- Automovil uses CaracteristicaOpcionalAttribute -->
+  <path d="M 300 160 L 230 170" class="relationship uses"/>
+  <text x="260" y="165" class="relationship-label">uses</text>
+
+  <!-- Automovil uses DescripcionEnumAttribute -->
+  <path d="M 300 160 L 230 200" class="relationship uses"/>
+  <text x="260" y="180" class="relationship-label">uses</text>
+
+  <!-- EnumHelper uses DescripcionEnumAttribute -->
+  <path d="M 300 330 L 230 230" class="relationship uses"/>
+  <text x="260" y="280" class="relationship-label">uses</text>
+
+  <!-- Enums use DescripcionEnumAttribute -->
+  <path d="M 120 560 L 140 280" class="relationship uses"/>
+  <text x="125" y="420" class="relationship-label">uses</text>
+
+  <!-- === LEYENDA === -->
+  <rect x="850" y="560" width="300" height="380" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="5"/>
+  <text x="860" y="580" font-family="Arial" font-size="14" font-weight="bold" fill="#333">Leyenda</text>
+  
+  <!-- Símbolos de leyenda -->
+  <rect x="870" y="590" width="20" height="15" class="class-box"/>
+  <text x="900" y="602" class="text">Clase</text>
+  
+  <rect x="870" y="615" width="20" height="15" class="interface-box"/>
+  <text x="900" y="627" class="text">Interfaz</text>
+  
+  <rect x="870" y="640" width="20" height="15" class="attribute-box"/>
+  <text x="900" y="652" class="text">Atributo Personalizado</text>
+  
+  <rect x="870" y="665" width="20" height="15" class="enum-box"/>
+  <text x="900" y="677" class="text">Enumeración</text>
+  
+  <rect x="870" y="690" width="20" height="15" class="utility-box"/>
+  <text x="900" y="702" class="text">Clase de Utilidades</text>
+
+  <!-- Tipos de relaciones -->
+  <line x1="870" y1="720" x2="890" y2="720" class="relationship implements"/>
+  <text x="900" y="724" class="text">Implementación</text>
+  
+  <line x1="870" y1="740" x2="890" y2="740" class="relationship uses"/>
+  <text x="900" y="744" class="text">Uso/Composición</text>
+  
+  <line x1="870" y1="760" x2="890" y2="760" class="relationship creates" marker-end="url(#arrowhead-green)"/>
+  <text x="900" y="764" class="text">Creación</text>
+
+  <!-- Mejoras implementadas -->
+  <text x="860" y="790" font-family="Arial" font-size="12" font-weight="bold" fill="#1976d2">Mejoras Implementadas:</text>
+  <text x="860" y="810" class="text">🔧 Atributos personalizados para características opcionales</text>
+  <text x="860" y="825" class="text">🔄 Reflexión para automatizar GetOpcionesActivas()</text>
+  <text x="860" y="840" class="text">🏗️ Builder con diccionarios dinámicos y Reset() automático</text>
+  <text x="860" y="855" class="text">🎭 Director con configuraciones centralizadas</text>
+  <text x="860" y="870" class="text">📋 Enums con descripciones legibles para usuarios</text>
+  <text x="860" y="885" class="text">⚡ Aplicación automática de características por tipo</text>
+  <text x="860" y="900" class="text">🛠️ Utilidades estáticas para manejo de enums</text>
+  <text x="860" y="915" class="text">📉 70% menos código repetitivo</text>
+  <text x="860" y="930" class="text">🛡️ Menor riesgo de errores</text>
+
+</svg>
