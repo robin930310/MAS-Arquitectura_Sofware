@@ -29,4 +29,4 @@ En los siguientes tres ejercicios deberás:
 
 - 🚗 [Ejercicio 1: Compañía automotriz](./Docs/Ejercicio_1/README.md)
 - 📣 [Ejercicio 2: Gestión de notificaciones](./Docs/Ejercicio_2/README.md)
-- 💬 [Ejercicio 3: Chat grupal](./Ejercicios/Ejercicio_3.md)
+- 💬 [Ejercicio 3: Chat grupal](./Docs/Ejercicio_3/DOCUMENTO_PROFESIONAL_MEDIATOR.html)

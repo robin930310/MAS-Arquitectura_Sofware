@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1400"
+   height="1000"
+   version="1.1"
+   id="svg95"
+   sodipodi:docname="DIAGRAMA_CLASES_MEDIATOR.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview95"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.807"
+     inkscape:cx="701.36307"
+     inkscape:cy="519.82652"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg95" />
+  <defs
+     id="defs11">
+    <!-- Gradientes mejorados -->
+    <linearGradient
+       id="interfaceGradient"
+       x1="37.101738"
+       y1="131.83794"
+       x2="37.101738"
+       y2="320.63412"
+       gradientTransform="scale(1.3308002,0.7514276)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#3498db;stop-opacity:1"
+         id="stop1" />
+      <stop
+         offset="100%"
+         style="stop-color:#2980b9;stop-opacity:1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="classGradient"
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#2ecc71;stop-opacity:1"
+         id="stop3" />
+      <stop
+         offset="100%"
+         style="stop-color:#27ae60;stop-opacity:1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="attributeGradient"
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#e74c3c;stop-opacity:1"
+         id="stop5" />
+      <stop
+         offset="100%"
+         style="stop-color:#c0392b;stop-opacity:1"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="advancedGradient"
+       x1="583.22172"
+       y1="109.85816"
+       x2="583.22172"
+       y2="335.51276"
+       gradientTransform="scale(1.1134273,0.89812777)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#9b59b6;stop-opacity:1"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#8e44ad;stop-opacity:1"
+         id="stop8" />
+    </linearGradient>
+    <!-- Sombra suave -->
+    <filter
+       id="shadow"
+       x="-0.0025"
+       y="-0.0066666667"
+       width="1.005"
+       height="1.0133333">
+      <feDropShadow
+         dx="2"
+         dy="2"
+         stdDeviation="2"
+         flood-opacity="0.2" />
+    </filter>
+    <!-- Flechas -->
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#2c3e50"
+         id="polygon8" />
+    </marker>
+    <marker
+       id="arrowheadRed"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#e74c3c"
+         id="polygon9" />
+    </marker>
+    <marker
+       id="arrowheadGreen"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#27ae60"
+         id="polygon10" />
+    </marker>
+    <marker
+       id="arrowheadPurple"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#9b59b6"
+         id="polygon11" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#classGradient"
+       id="linearGradient1"
+       x1="280.6564"
+       y1="123.15712"
+       x2="280.6564"
+       y2="324.98873"
+       gradientTransform="scale(1.2448496,0.8033099)"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       id="shadow-4"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feDropShadow
+         dx="2"
+         dy="2"
+         stdDeviation="2"
+         flood-opacity="0.2" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#attributeGradient"
+       id="linearGradient5"
+       x1="38.501173"
+       y1="834.66029"
+       x2="38.501173"
+       y2="990.99839"
+       gradientTransform="scale(1.2856751,0.77780147)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#attributeGradient"
+       id="linearGradient6"
+       x1="234.81399"
+       y1="772.58657"
+       x2="234.81399"
+       y2="941.45101"
+       gradientTransform="scale(1.1903039,0.8401216)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#classGradient"
+       id="linearGradient8"
+       x1="822.89911"
+       y1="772.58657"
+       x2="822.89911"
+       y2="941.45101"
+       gradientTransform="matrix(1.1903039,0,0,0.8401216,-7.4349442,1.2391574)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#attributeGradient"
+       id="linearGradient19"
+       x1="428.04196"
+       y1="772.58657"
+       x2="428.04196"
+       y2="941.45101"
+       gradientTransform="scale(1.1903039,0.8401216)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#classGradient"
+       id="linearGradient21"
+       x1="673.14676"
+       y1="722.5401"
+       x2="673.14676"
+       y2="903.06379"
+       gradientTransform="scale(1.1134273,0.89812777)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <!-- Fondo -->
+  <rect
+     width="1400"
+     height="1000"
+     fill="#f8f9fa"
+     id="rect11"
+     style="fill:#ffffff;fill-opacity:1" />
+  <!-- Título -->
+  <text
+     x="700"
+     y="40"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="28"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text11">
+    Diagrama de Clases - Patrón Mediator
+  </text>
+  <text
+     x="700"
+     y="65"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     fill="#7f8c8d"
+     id="text12">
+    Sistema de Chat Grupal
+  </text>
+  <!-- LÍNEA 1: INTERFACES Y MEDIADORES -->
+  <!-- IChatMediator - Interfaz -->
+  <rect
+     x="50"
+     y="100"
+     width="250"
+     height="140"
+     rx="8"
+     fill="url(#interfaceGradient)"
+     filter="url(#shadow)"
+     id="rect12"
+     style="fill:url(#interfaceGradient)"
+     transform="matrix(1.655952,0,0,1,-32.387628,0)" />
+  <text
+     x="175"
+     y="125"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="14"
+     font-weight="bold"
+     fill="white"
+     id="text13">
+    &lt;&lt;interface&gt;&gt;
+  </text>
+  <text
+     x="175"
+     y="145"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="white"
+     id="text14">
+    IChatMediator
+  </text>
+  <line
+     x1="60"
+     y1="155"
+     x2="290"
+     y2="155"
+     stroke="white"
+     stroke-width="1"
+     id="line14" />
+  <text
+     x="60"
+     y="175"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text15">
+    + SendMessage(from: string, to: string, message: string)
+  </text>
+  <text
+     x="60"
+     y="195"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text16">
+    + AddUser(user: User)
+  </text>
+  <text
+     x="60"
+     y="215"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text17">
+    + GetChatStatistics(): Dictionary
+  </text>
+  <!-- ChatMediator - Implementación Básica -->
+  <rect
+     x="350"
+     y="100"
+     width="250"
+     height="160"
+     rx="8"
+     fill="url(#classGradient)"
+     filter="url(#shadow)"
+     id="rect17"
+     style="fill:url(#linearGradient1)"
+     transform="matrix(1.1331632,0,0,1,-363.74817,206.93928)" />
+  <text
+     x="166.44981"
+     y="326.98264"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text18">ChatMediator</text>
+  <line
+     x1="63.841389"
+     y1="336.98264"
+     x2="293.84137"
+     y2="336.98264"
+     stroke="#ffffff"
+     stroke-width="1"
+     id="line18" />
+  <text
+     x="81.18959"
+     y="355.7435"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text19">- _users: IDictionary&lt;string, User&gt;</text>
+  <line
+     x1="64.03717"
+     y1="365.7435"
+     x2="294.0372"
+     y2="365.7435"
+     stroke="#ffffff"
+     stroke-width="1"
+     id="line19" />
+  <text
+     x="45.472122"
+     y="390.70013"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text20"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="45.472122"
+       y="390.70013">+ SendMessage(from: string, to: string</tspan><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       x="45.472122"
+       y="406.95013">, message: string)</tspan></text>
+  <text
+     x="43.645599"
+     y="426.80917"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text21">+ AddUser(user: User)</text>
+  <text
+     x="44.01487"
+     y="449.00494"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text22">+ GetChatStatistics(): Dictionary</text>
+  <!-- ReflectiveChatMediator - Implementación Avanzada -->
+  <rect
+     x="650"
+     y="100"
+     width="250"
+     height="200"
+     rx="8"
+     fill="url(#advancedGradient)"
+     filter="url(#shadow)"
+     id="rect22"
+     style="fill:url(#advancedGradient)"
+     transform="matrix(1.5671765,0,0,1.0061143,-368.31025,-0.60327399)" />
+  <text
+     x="775"
+     y="125"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="white"
+     id="text23">
+    ReflectiveChatMediator
+  </text>
+  <line
+     x1="660"
+     y1="135"
+     x2="890"
+     y2="135"
+     stroke="white"
+     stroke-width="1"
+     id="line23" />
+  <text
+     x="660"
+     y="155"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text24">
+    - _users: IDictionary&lt;string, User&gt;
+  </text>
+  <text
+     x="660"
+     y="175"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text25">
+    - _messageHandlers: IDictionary&lt;string, MethodInfo&gt;
+  </text>
+  <text
+     x="660"
+     y="195"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text26">
+    - _participants: IDictionary&lt;string, object&gt;
+  </text>
+  <line
+     x1="660"
+     y1="205"
+     x2="890"
+     y2="205"
+     stroke="white"
+     stroke-width="1"
+     id="line26" />
+  <text
+     x="660"
+     y="225"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text27">
+    + SendMessage(from: string, to: string, message: string)
+  </text>
+  <text
+     x="660"
+     y="245"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text28">
+    + AddUser(user: User)
+  </text>
+  <text
+     x="660"
+     y="265"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text29">
+    + GetChatStatistics(): Dictionary
+  </text>
+  <text
+     x="660"
+     y="285"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text30">
+    + GetParticipantsInfo(): Dictionary
+  </text>
+  <!-- LÍNEA 2: PARTICIPANTE PRINCIPAL -->
+  <!-- User - Clase Participante -->
+  <rect
+     x="350"
+     y="350"
+     width="300"
+     height="220"
+     rx="8"
+     fill="url(#classGradient)"
+     filter="url(#shadow)"
+     id="rect30" />
+  <text
+     x="500"
+     y="375"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="white"
+     id="text31">
+    User
+  </text>
+  <line
+     x1="360"
+     y1="385"
+     x2="640"
+     y2="385"
+     stroke="white"
+     stroke-width="1"
+     id="line31" />
+  <text
+     x="360"
+     y="405"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text32">
+    - _mediator: IChatMediator
+  </text>
+  <text
+     x="360"
+     y="425"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text33">
+    + NickName: string
+  </text>
+  <text
+     x="360"
+     y="445"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text34">
+    + IsOnline: bool
+  </text>
+  <text
+     x="360"
+     y="465"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text35">
+    + LastActivity: DateTime
+  </text>
+  <text
+     x="360"
+     y="485"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text36">
+    + UserId: Guid
+  </text>
+  <text
+     x="360"
+     y="505"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text37">
+    + MessagesSent: int
+  </text>
+  <text
+     x="360"
+     y="525"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text38">
+    + MessagesReceived: int
+  </text>
+  <line
+     x1="360"
+     y1="535"
+     x2="640"
+     y2="535"
+     stroke="white"
+     stroke-width="1"
+     id="line38" />
+  <text
+     x="360"
+     y="555"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text39">
+    + SendMessage(to: string, message: string)
+  </text>
+  <!-- LÍNEA 3: ATRIBUTOS PERSONALIZADOS -->
+  <!-- MediatorParticipantAttribute -->
+  <rect
+     x="50"
+     y="650"
+     width="200"
+     height="120"
+     rx="8"
+     fill="url(#attributeGradient)"
+     filter="url(#shadow)"
+     id="rect39"
+     style="fill:url(#linearGradient5)"
+     transform="matrix(1.166454,0,0,1.0713331,-28.06599,-46.309431)" />
+  <text
+     x="150"
+     y="675"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="white"
+     id="text40">
+    MediatorParticipantAttribute
+  </text>
+  <line
+     x1="60"
+     y1="685"
+     x2="240"
+     y2="685"
+     stroke="white"
+     stroke-width="1"
+     id="line40" />
+  <text
+     x="60"
+     y="705"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text41">
+    + Name: string
+  </text>
+  <text
+     x="60"
+     y="725"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text42"><tspan
+       sodipodi:role="line"
+       id="tspan14"
+       x="60"
+       y="725">+ MediatorParticipantAttribute</tspan><tspan
+       sodipodi:role="line"
+       id="tspan15"
+       x="60"
+       y="741.25">(name: string)</tspan></text>
+  <text
+     x="60"
+     y="763"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text43">+ MediatorParticipantAttribute()</text>
+  <!-- MediatorPropertyAttribute -->
+  <rect
+     x="280"
+     y="650"
+     width="200"
+     height="140"
+     rx="8"
+     fill="url(#attributeGradient)"
+     filter="url(#shadow)"
+     id="rect43"
+     style="fill:url(#linearGradient6)"
+     transform="matrix(1.0863095,0,0,1.1484893,-24.123497,-96.379426)" />
+  <text
+     x="380"
+     y="675"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="white"
+     id="text44">
+    MediatorPropertyAttribute
+  </text>
+  <line
+     x1="290"
+     y1="685"
+     x2="470"
+     y2="685"
+     stroke="white"
+     stroke-width="1"
+     id="line44" />
+  <text
+     x="290"
+     y="705"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text45">
+    + PropertyName: string
+  </text>
+  <text
+     x="290"
+     y="725"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text46">
+    + IsRequired: bool
+  </text>
+  <text
+     x="290"
+     y="745"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text47"><tspan
+       sodipodi:role="line"
+       id="tspan11"
+       x="290"
+       y="745">+ MediatorPropertyAttribute</tspan><tspan
+       sodipodi:role="line"
+       id="tspan12"
+       x="290"
+       y="761.25">(propertyName: string, isRequired:</tspan><tspan
+       sodipodi:role="line"
+       x="290"
+       y="777.5"
+       id="tspan13">bool)</tspan></text>
+  <text
+     x="290"
+     y="797"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text48">+ MediatorPropertyAttribute()</text>
+  <!-- MediatorHandlerAttribute -->
+  <rect
+     x="510"
+     y="650"
+     width="200"
+     height="140"
+     rx="8"
+     fill="url(#attributeGradient)"
+     filter="url(#shadow)"
+     id="rect48"
+     style="fill:url(#linearGradient19)"
+     transform="matrix(1,0,0,1.1310199,0,-85.04067)" />
+  <text
+     x="610"
+     y="675"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="white"
+     id="text49">
+    MediatorHandlerAttribute
+  </text>
+  <line
+     x1="520"
+     y1="685"
+     x2="700"
+     y2="685"
+     stroke="white"
+     stroke-width="1"
+     id="line49" />
+  <text
+     x="520"
+     y="705"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text50">
+    + MessageType: string
+  </text>
+  <text
+     x="520"
+     y="725"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text51">
+    + Description: string
+  </text>
+  <text
+     x="520"
+     y="745"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text52"><tspan
+       sodipodi:role="line"
+       id="tspan16"
+       x="520"
+       y="745">+ MediatorHandlerAttribute</tspan><tspan
+       sodipodi:role="line"
+       id="tspan17"
+       x="520"
+       y="761.25">(messageType: string)</tspan></text>
+  <text
+     x="520"
+     y="785"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text53"><tspan
+       sodipodi:role="line"
+       id="tspan18"
+       x="520"
+       y="785">+ MediatorHandlerAttribute</tspan><tspan
+       sodipodi:role="line"
+       id="tspan19"
+       x="520"
+       y="801.25">(messageType: string)</tspan></text>
+  <!-- LÍNEA 4: COMPONENTES DE APLICACIÓN -->
+  <!-- Layout -->
+  <rect
+     x="750"
+     y="650"
+     width="200"
+     height="160"
+     rx="8"
+     fill="url(#classGradient)"
+     filter="url(#shadow)"
+     id="rect53"
+     style="fill:url(#linearGradient21)"
+     transform="matrix(1,0,0,1.0305713,0,-19.838747)" />
+  <text
+     x="850"
+     y="675"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="white"
+     id="text54">
+    Layout
+  </text>
+  <line
+     x1="760"
+     y1="685"
+     x2="940"
+     y2="685"
+     stroke="white"
+     stroke-width="1"
+     id="line54" />
+  <text
+     x="760"
+     y="699"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text55">- _rootPanel: Panel</text>
+  <text
+     x="758"
+     y="715"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text56"><tspan
+       sodipodi:role="line"
+       id="tspan9"
+       x="758"
+       y="715">- _userPanels: IDictionary&lt;string,</tspan><tspan
+       sodipodi:role="line"
+       id="tspan10"
+       x="758"
+       y="731.25">List&lt;string&gt;&gt;</tspan></text>
+  <line
+     x1="760"
+     y1="735"
+     x2="940"
+     y2="735"
+     stroke="white"
+     stroke-width="1"
+     id="line56" />
+  <text
+     x="760"
+     y="757"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text57">+ Instance: Layout</text>
+  <text
+     x="760"
+     y="775"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text58">
+    + Render(): void
+  </text>
+  <text
+     x="760"
+     y="795"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text59"><tspan
+       sodipodi:role="line"
+       id="tspan20"
+       x="760"
+       y="795">+ AddUserMessage(user: string,</tspan><tspan
+       sodipodi:role="line"
+       id="tspan21"
+       x="760"
+       y="811.25">message: string)</tspan></text>
+  <!-- Program -->
+  <rect
+     x="972.56506"
+     y="651.23914"
+     width="200"
+     height="140"
+     rx="8"
+     fill="url(#classGradient)"
+     filter="url(#shadow)"
+     id="rect59"
+     style="fill:url(#linearGradient8)"
+     transform="matrix(0.9506803,0,0,1,57.855213,0)" />
+  <text
+     x="1080"
+     y="675"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="white"
+     id="text60">
+    Program
+  </text>
+  <line
+     x1="990"
+     y1="685"
+     x2="1170"
+     y2="685"
+     stroke="white"
+     stroke-width="1"
+     id="line60" />
+  <text
+     x="990"
+     y="705"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text61">
+    - _users: List&lt;User&gt;
+  </text>
+  <text
+     x="993.71747"
+     y="720.0434"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#ffffff"
+     id="text62"><tspan
+       sodipodi:role="line"
+       id="tspan7"
+       x="993.71747"
+       y="720.0434">- _chatMediator:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan8"
+       x="993.71747"
+       y="736.2934">ReflectiveChatMediator</tspan></text>
+  <line
+     x1="990"
+     y1="743"
+     x2="1170"
+     y2="743"
+     stroke="#ffffff"
+     stroke-width="1"
+     id="line62" />
+  <text
+     x="990"
+     y="755"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text63">
+    + Main(args: string[]): void
+  </text>
+  <text
+     x="990"
+     y="775"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="white"
+     id="text64">
+    + EjemploPatron(): void
+  </text>
+  <!-- RELACIONES CLARAS Y SEPARADAS -->
+  <!-- IChatMediator -> ChatMediator (Implementación) -->
+  <path
+     d="m 146.74784,243.72621 -1.16306,60.09633"
+     stroke="#2c3e50"
+     stroke-width="3.18752"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path64" />
+  <text
+     x="103.19083"
+     y="264.1326"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text65">implements</text>
+  <!-- IChatMediator -> ReflectiveChatMediator (Implementación) -->
+  <path
+     d="M 464.41635,171.9777 H 647.35304"
+     stroke="#2c3e50"
+     stroke-width="2.16889"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path65" />
+  <text
+     x="569.17596"
+     y="165"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text66">implements</text>
+  <!-- User -> IChatMediator (Dependencia) -->
+  <path
+     d="M 500 350 L 175 240"
+     stroke="#e74c3c"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowheadRed)"
+     id="path66" />
+  <text
+     x="351.8699"
+     y="286.3259"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     font-weight="bold"
+     fill="#e74c3c"
+     id="text67">uses</text>
+  <!-- ReflectiveChatMediator -> User (Composición) -->
+  <path
+     d="M 768.89217,304.90337 499.85387,350.4146"
+     stroke="#27ae60"
+     stroke-width="2.83098"
+     fill="none"
+     marker-end="url(#arrowheadGreen)"
+     id="path67" />
+  <text
+     x="628.32593"
+     y="312.60843"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     font-weight="bold"
+     fill="#27ae60"
+     id="text68">manages</text>
+  <!-- User -> MediatorParticipantAttribute (Decoración) -->
+  <path
+     d="M 345.89517,557.06575 123.24734,647.41614"
+     stroke="#9b59b6"
+     stroke-width="1.48197"
+     fill="none"
+     stroke-dasharray="8, 4"
+     marker-end="url(#arrowheadPurple)"
+     id="path68" />
+  <text
+     x="181.84634"
+     y="599.60968"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     font-weight="bold"
+     fill="#9b59b6"
+     id="text69">decorated with</text>
+  <!-- User -> MediatorPropertyAttribute (Decoración) -->
+  <path
+     d="m 414.34568,569.75109 -32.54665,80.73608"
+     stroke="#9b59b6"
+     stroke-width="1.66312"
+     fill="none"
+     stroke-dasharray="8, 4"
+     marker-end="url(#arrowheadPurple)"
+     id="path69" />
+  <text
+     x="445.76208"
+     y="607.04462"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     font-weight="bold"
+     fill="#9b59b6"
+     id="text70">decorated with</text>
+  <!-- ReflectiveChatMediator -> MediatorHandlerAttribute (Decoración) -->
+  <path
+     d="M 799.34355,305.57775 630.62167,643.28477"
+     stroke="#9b59b6"
+     stroke-width="4.03479"
+     fill="none"
+     stroke-dasharray="8, 4"
+     marker-end="url(#arrowheadPurple)"
+     id="path70" />
+  <text
+     x="711.78436"
+     y="398.17224"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     font-weight="bold"
+     fill="#9b59b6"
+     id="text71">decorated with</text>
+  <!-- Program -> ReflectiveChatMediator (Creación) -->
+  <path
+     d="M 1080.0596,650.14357 828.07816,297.38816"
+     stroke="#34495e"
+     stroke-width="2.73753"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path71" />
+  <text
+     x="927"
+     y="475"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12"
+     font-weight="bold"
+     fill="#34495e"
+     id="text72">
+    creates
+  </text>
+  <!-- Program -> User (Creación) -->
+  <path
+     d="M 1080 650 L 500 570"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path72" />
+  <text
+     x="749.10779"
+     y="593.89093"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     font-weight="bold"
+     fill="#34495e"
+     id="text73">creates</text>
+  <!-- User -> Layout (Actualización UI) -->
+  <path
+     d="M 650 460 L 850 650"
+     stroke="#f39c12"
+     stroke-width="2"
+     fill="none"
+     stroke-dasharray="8,4"
+     marker-end="url(#arrowhead)"
+     id="path73" />
+  <text
+     x="780.97894"
+     y="541.36926"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     font-weight="bold"
+     fill="#f39c12"
+     id="text74">updates UI</text>
+  <!-- Program -> Layout (Uso) -->
+  <path
+     d="M 980,720.61958 H 952.2764"
+     stroke="#34495e"
+     stroke-width="0.923603"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path74" />
+  <text
+     x="965.80542"
+     y="708.8042"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     font-weight="bold"
+     fill="#34495e"
+     id="text75">uses</text>
+  <!-- LEYENDA MEJORADA -->
+  <rect
+     x="50"
+     y="820"
+     width="400"
+     height="150"
+     rx="8"
+     fill="white"
+     stroke="#bdc3c7"
+     stroke-width="2"
+     filter="url(#shadow)"
+     id="rect75" />
+  <text
+     x="250"
+     y="845"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text76">
+    Leyenda de Relaciones
+  </text>
+  <line
+     x1="70"
+     y1="860"
+     x2="100"
+     y2="860"
+     stroke="#2c3e50"
+     stroke-width="3"
+     id="line76" />
+  <text
+     x="110"
+     y="865"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text77">
+    Herencia/Implementación
+  </text>
+  <line
+     x1="70"
+     y1="880"
+     x2="100"
+     y2="880"
+     stroke="#e74c3c"
+     stroke-width="3"
+     id="line77" />
+  <text
+     x="110"
+     y="885"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#e74c3c"
+     id="text78">
+    Dependencia/Uso
+  </text>
+  <line
+     x1="70"
+     y1="900"
+     x2="100"
+     y2="900"
+     stroke="#27ae60"
+     stroke-width="3"
+     id="line78" />
+  <text
+     x="110"
+     y="905"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text79">
+    Composición/Agregación
+  </text>
+  <line
+     x1="70"
+     y1="920"
+     x2="100"
+     y2="920"
+     stroke="#9b59b6"
+     stroke-width="2"
+     stroke-dasharray="8,4"
+     id="line79" />
+  <text
+     x="110"
+     y="925"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#9b59b6"
+     id="text80">
+    Decoración con Atributos
+  </text>
+  <line
+     x1="70"
+     y1="940"
+     x2="100"
+     y2="940"
+     stroke="#f39c12"
+     stroke-width="2"
+     stroke-dasharray="8,4"
+     id="line80" />
+  <text
+     x="110"
+     y="945"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#f39c12"
+     id="text81">
+    Interacción con UI
+  </text>
+  <line
+     x1="70"
+     y1="960"
+     x2="100"
+     y2="960"
+     stroke="#34495e"
+     stroke-width="3"
+     id="line81" />
+  <text
+     x="110"
+     y="965"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#34495e"
+     id="text82">
+    Creación/Instanciación
+  </text>
+  <!-- INFORMACIÓN DEL PATRÓN -->
+  <rect
+     x="500"
+     y="820"
+     width="400"
+     height="150"
+     rx="8"
+     fill="#ecf0f1"
+     stroke="#bdc3c7"
+     stroke-width="2"
+     id="rect82" />
+  <text
+     x="700"
+     y="845"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text83">
+    Componentes del Patrón
+  </text>
+  <text
+     x="520"
+     y="870"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text84">
+    • <strong>IChatMediator:</strong> Interfaz que define la comunicación
+  </text>
+  <text
+     x="520"
+     y="890"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text85">
+    • <strong>ChatMediator:</strong> Implementación básica del mediador
+  </text>
+  <text
+     x="520"
+     y="910"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text86">
+    • <strong>ReflectiveChatMediator:</strong> Implementación avanzada con reflexión
+  </text>
+  <text
+     x="520"
+     y="930"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text87">
+    • <strong>User:</strong> Participante que se comunica a través del mediador
+  </text>
+  <text
+     x="520"
+     y="950"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#2c3e50"
+     id="text88">
+    • <strong>Atributos:</strong> Configuración declarativa para reflexión
+  </text>
+  <!-- BENEFICIOS -->
+  <rect
+     x="950"
+     y="820"
+     width="400"
+     height="150"
+     rx="8"
+     fill="#e8f5e8"
+     stroke="#27ae60"
+     stroke-width="2"
+     id="rect88" />
+  <text
+     x="1150"
+     y="845"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="18"
+     font-weight="bold"
+     fill="#27ae60"
+     id="text89">
+    Beneficios del Patrón
+  </text>
+  <text
+     x="970"
+     y="870"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text90">
+    ✅ <strong>Desacoplamiento:</strong> Usuarios no conocen entre sí
+  </text>
+  <text
+     x="970"
+     y="890"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text91">
+    ✅ <strong>Centralización:</strong> Lógica de comunicación en un punto
+  </text>
+  <text
+     x="970"
+     y="910"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text92">
+    ✅ <strong>Escalabilidad:</strong> Fácil agregar/eliminar usuarios
+  </text>
+  <text
+     x="970"
+     y="930"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text93">
+    ✅ <strong>Mantenibilidad:</strong> Cambios centralizados
+  </text>
+  <text
+     x="970"
+     y="950"
+     font-family="Arial, sans-serif"
+     font-size="13"
+     fill="#27ae60"
+     id="text94">
+    ✅ <strong>Extensibilidad:</strong> Nuevas funcionalidades sin afectar usuarios
+  </text>
+  <!-- Pie de página -->
+  <text
+     x="693.8042"
+     y="991.32593"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="12px"
+     fill="#7f8c8d"
+     id="text95">Diagrama de Clases - Patrón Mediator | Sistema de Chat Grupal</text>
+</svg>
