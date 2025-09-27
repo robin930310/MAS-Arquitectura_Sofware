@@ -6,14 +6,14 @@
 
 ## 📑 Tabla de Contenidos
 
-1. [Introducción](#introducción)
-2. [Análisis del Escenario](#análisis-del-escenario)
-3. [Justificación del Patrón Mediator](#justificación-del-patrón-mediator)
-4. [Implementación de la Solución](#implementación-de-la-solución)
-5. [Arquitectura del Sistema](#arquitectura-del-sistema)
-6. [Beneficios Obtenidos](#beneficios-obtenidos)
-7. [Características Avanzadas](#características-avanzadas)
-8. [Conclusiones](#conclusiones)
+1. [Introducción](#1-introduccion)
+2. [Análisis del Escenario](#2-analisis-del-escenario)
+3. [Justificación del Patrón Mediator](#3-justificacion-del-patron-mediator)
+4. [Implementación de la Solución](#4-implementacion-de-la-solucion)
+5. [Arquitectura del Sistema](#5-arquitectura-del-sistema)
+6. [Beneficios Obtenidos](#6-beneficios-obtenidos)
+7. [Características Avanzadas](#7-caracteristicas-avanzadas)
+8. [Conclusiones](#8-conclusiones)
 
 ---
 
