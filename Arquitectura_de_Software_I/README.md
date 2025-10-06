@@ -12,3 +12,4 @@
 ## 📄 Actividades
 
 - [Actividad 1: Patrones de Diseño](./Actividad_1/README.md)
+- [Actividad 2](./Actividad_2/README.md)
