@@ -72,6 +72,8 @@ namespace UsabanaAPIrest.Servicios
             }
 
             _dbContext.Products.Remove(current);
+
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

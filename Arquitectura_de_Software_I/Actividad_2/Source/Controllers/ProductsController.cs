@@ -100,30 +100,6 @@ namespace UsabanaAPIrest.Controllers
                     detail: $"Producto con el identificador {id} no existe");
             }
         }
-
-        /// <summary>
-        /// Elimina un producto por su identificador.
-        /// </summary>
-        /// <param name="id">Identificador del producto a eliminar.</param>
-        /// <response code="204">Producto eliminado exitosamente</response>
-        /// <response code="400">Identificador del producto no Existe</response>
-        [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete(string id)
-        {
-            try
-            {
-                await _productService.Delete(id);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return Problem(
-                    statusCode: StatusCodes.Status404NotFound,
-                    detail: $"Producto con el identificador {id} no existe");
-            }
-        }
     }
 
 
@@ -145,6 +121,7 @@ namespace UsabanaAPIrest.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [MapToApiVersion(2)]
         public async Task<IActionResult> GetProducts([FromQuery] int limit = 3, [FromQuery] int page = 1)
         {
             if (limit > 10)
@@ -178,6 +155,31 @@ namespace UsabanaAPIrest.Controllers
             }
 
             return Ok(await _productService.GetPagination(limit, (page - 1) * limit));
+        }
+
+        /// <summary>
+        /// Elimina un producto por su identificador.
+        /// </summary>
+        /// <param name="id">Identificador del producto a eliminar.</param>
+        /// <response code="204">Producto eliminado exitosamente</response>
+        /// <response code="400">Identificador del producto no Existe</response>
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [MapToApiVersion(2)]
+        public async Task<IActionResult> Delete(string id)
+        {
+            try
+            {
+                await _productService.Delete(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
+            {
+                return Problem(
+                    statusCode: StatusCodes.Status404NotFound,
+                    detail: $"Producto con el identificador {id} no existe");
+            }
         }
     }
 }
