@@ -12,4 +12,5 @@
 ## 📄 Actividades
 
 - [Actividad 1: Patrones de Diseño](./Actividad_1/README.md)
-- [Actividad 2: Patrones y estilos arquitectónicos](./Actividad_2/README.md)
+- [Actividad 2: Patrones y estilos arquitectónicos](./Actividad_2/README.md) 
+- [Actividad 3: Trabajo K8S (CI/CD)](./Actividad_3/README.md)
